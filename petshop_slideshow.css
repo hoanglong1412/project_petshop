@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: #000;
+}
+.a{
+	display: block;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	padding: 15px 30px;
+	text-decoration: none;
+	color: #fff;
+	transition: .5s;
+	transition-delay: .5s;
+	-webkit-box-reflect:  below 1px linear-gradient(transparent,transparent,#0004);
+}
+.a:hover{
+	background: #48EBFB;
+	color: #000;
+	box-shadow: 0 0 5px #48EBFB,
+				 0 0 15px #48EBFB,
+				 0 0 25px #48EBFB,
+		 		0 0 35px #48EBFB;
+	-webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0004);
+}
+.a:hover span:nth-child(1){
+	width: 100%;
+}
+.a:hover span:nth-child(2){
+	width: 100%;
+}
+.a:hover span:nth-child(3){
+	height: 100%;
+}
+.a:hover span:nth-child(4){
+	height: 100%;
+}
+.a span{
+	transition: .5s;
+}
+.a span:nth-child(1){
+	position: absolute;
+	background: #48EBFB;
+	top: 0;
+	left: 0;
+	width: 20%;
+	height: 2px;
+}
+.a span:nth-child(2){
+	position: absolute;
+	background: #48EBFB;
+	bottom: 0;
+	right: 0;
+	width: 20%;
+	height: 2px;
+}
+.a span:nth-child(3){
+	position: absolute;
+	background: #48EBFB;
+	bottom: 0;
+	right: 0;;
+	width: 2px;
+	height: 40%;
+}
+.a span:nth-child(4){
+	position: absolute;
+	background: #48EBFB;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 40%;
+}
+.box{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	transform-style: preserve-3d;
+	animation: 20s animate linear infinite;
+
+}
+@keyframes animate{
+	0%{
+		transform: perspective(1000px) rotateY(0deg);
+	}
+	100%{
+		transform: perspective(1000px) rotateY(360deg);
+	}
+	
+}
+.box span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-origin: center;
+	transform-style: preserve-3d;
+	transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+	-webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0004);
+}
+.box span img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
